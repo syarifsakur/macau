@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">HTML • CSS • JS</p>
+          <h1>TaskFlow</h1>
+          <p class="lead">
+            Aplikasi sederhana untuk mengatur tugas harian, menandai selesai,
+            dan menjaga fokus.
+          </p>
+        </div>
+
+        <div class="hero-stats" aria-label="Ringkasan tugas">
+          <article>
+            <span id="totalCount">0</span>
+            <small>Total</small>
+          </article>
+          <article>
+            <span id="doneCount">0</span>
+            <small>Selesai</small>
+          </article>
+          <article>
+            <span id="pendingCount">0</span>
+            <small>Aktif</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <form id="taskForm" class="task-form">
+          <label class="sr-only" for="taskInput">Tugas baru</label>
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Tulis tugas baru..."
+            autocomplete="off"
+            maxlength="80"
+          />
+          <button type="submit">Tambah</button>
+        </form>
+
+        <div class="toolbar" role="tablist" aria-label="Filter tugas">
+          <button class="filter-btn active" data-filter="all" type="button">
+            Semua
+          </button>
+          <button class="filter-btn" data-filter="active" type="button">
+            Aktif
+          </button>
+          <button class="filter-btn" data-filter="done" type="button">
+            Selesai
+          </button>
+        </div>
+
+        <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+        <p id="emptyState" class="empty-state">
+          Belum ada tugas. Tambahkan satu untuk memulai.
+        </p>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
